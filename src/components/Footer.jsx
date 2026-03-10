@@ -3,7 +3,7 @@ import logo from '../assets/logo.png';
 
 const Footer = () => {
     return (
-        <footer className="bg-white pt-14 md:pt-16 pb-8 px-6 md:px-8 border-t border-gray-50">
+        <footer className="bg-white pt-14 md:pt-16 pb-8 px-6 md:px-8 border-t border-[#E9E9E9]">
             <div className="max-w-6xl mx-auto flex flex-col md:flex-row justify-between items-start gap-10 md:gap-12">
                 <div className="space-y-5 max-w-sm">
                     <div className="flex items-center gap-3">
@@ -24,7 +24,7 @@ const Footer = () => {
                 </div>
             </div>
 
-            <div className="max-w-6xl mx-auto mt-12 md:mt-16 pt-6 border-t border-gray-50 flex justify-end">
+            <div className="max-w-6xl mx-auto mt-12 md:mt-16 pt-6 border-t border-[#E9E9E9] flex justify-end">
                 <p className="text-[10px] text-gray-300 font-bold uppercase tracking-widest">All rights reserved.</p>
             </div>
         </footer>

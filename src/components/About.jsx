@@ -1,16 +1,19 @@
 import React from 'react';
 import aboutImg from '../assets/about_sketch.png';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const About = () => {
+  const [ref, isVisible] = useScrollReveal();
+
   return (
     <section id="about" className="py-12 md:py-16 bg-white px-6 md:px-8">
       <div className="max-w-6xl mx-auto">
-        <div className="border border-gray-100 rounded-3xl overflow-hidden flex flex-col md:flex-row">
-          <div className="w-full md:w-2/5 bg-skyBlue min-h-[250px]">
+        <div ref={ref} className={`border border-[#E9E9E9] rounded-3xl overflow-hidden flex flex-col md:flex-row reveal ${isVisible ? 'visible' : ''}`}>
+          <div className="w-full md:w-2/5 bg-skyBlue min-h-[250px] overflow-hidden">
             <img
               src={aboutImg}
               alt="Training Workshop"
-              className="w-full h-full object-cover"
+              className="w-full h-full object-cover hover:scale-105 transition-transform duration-700"
             />
           </div>
 
@@ -20,7 +23,7 @@ const About = () => {
               Core Hexis is a highly dynamic and focused team training and capability development organization committed to bridging the gap between education and real world performance. We believe that organizations thrive through rigorous, structured expertise, specialized services and results-driven strategies.
             </p>
             <div>
-              <button className="bg-navy text-white px-7 py-3 rounded-md font-bold text-sm uppercase tracking-wider hover:bg-navy-light transition-all">
+              <button className="bg-navy text-white px-7 py-3 rounded-md font-bold text-sm uppercase tracking-wider hover:bg-navy-light hover:scale-105 transition-all duration-300">
                 Presence & Portfolio
               </button>
             </div>

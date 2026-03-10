@@ -1,18 +1,22 @@
 import React from 'react';
+import { useScrollReveal } from '../hooks/useScrollReveal';
 
 const Impact = () => {
+    const [titleRef, titleVisible] = useScrollReveal();
+    const [cardsRef, cardsVisible] = useScrollReveal(0.1);
+
     return (
         <section className="py-20 md:py-28 bg-navy px-6 md:px-8">
             <div className="max-w-6xl mx-auto space-y-14 md:space-y-20">
-                <div className="text-center py-4 md:py-8">
+                <div ref={titleRef} className={`text-center py-4 md:py-8 reveal ${titleVisible ? 'visible' : ''}`}>
                     <h2 className="text-4xl md:text-7xl font-serif italic font-bold text-white leading-tight">
                         Driven by purpose<br />
                         Guided by impact
                     </h2>
                 </div>
 
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
-                    <div className="bg-white p-8 md:p-10 rounded-2xl space-y-4">
+                <div ref={cardsRef} className={`grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8 reveal-stagger ${cardsVisible ? 'visible' : ''}`}>
+                    <div className="bg-white p-8 md:p-10 rounded-2xl space-y-4 hover:shadow-2xl hover:-translate-y-1 transition-all duration-500">
                         <h3 className="text-xl font-extrabold text-navy flex items-center gap-3">
                             <span className="text-2xl">📋</span> Our Mission
                         </h3>
@@ -21,7 +25,7 @@ const Impact = () => {
                         </p>
                     </div>
 
-                    <div className="bg-white p-8 md:p-10 rounded-2xl space-y-4">
+                    <div className="bg-white p-8 md:p-10 rounded-2xl space-y-4 hover:shadow-2xl hover:-translate-y-1 transition-all duration-500">
                         <h3 className="text-xl font-extrabold text-navy flex items-center gap-3">
                             <span className="text-2xl">🚀</span> Our Vision
                         </h3>
